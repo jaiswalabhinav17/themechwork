@@ -20,7 +20,7 @@ error_reporting(E_ERROR | E_PARSE);
      }
 
     $email_body = "Dear Team,<br><br>" . $name .
-        " has submitted a booking request. Below are the booking details,<br><br>" .
+        " has submitted a booking request. Below are the profile details,<br><br>" .
         "<b>Email Id:</b> " . $email . "<br><br>" .
         "<b>Contact:</b> " . $phone . "<br><br>" .
     "";
