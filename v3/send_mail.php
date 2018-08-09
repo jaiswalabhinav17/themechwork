@@ -1,14 +1,14 @@
 <?php
 require_once 'PHPMailerAutoload.php';
-
+error_reporting(E_ERROR | E_PARSE);
      // define variables and set to empty values
      $name = $email = $phone = $profile = $website = "";
          
      if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $name = test_input($_POST["name"]);
-        $email = test_input($_POST["email"]);
+        $name = test_input($_POST['name']);
+        $email = test_input($_POST['email']);
         $phone = test_input($_POST["phone"]);
-        $profile = test_input($_POST["profile"]);
+      
         
      }
      
@@ -25,7 +25,7 @@ require_once 'PHPMailerAutoload.php';
         "<b>Contact:</b> " . $phone . "<br><br>" .
     "";
     sendMail($email, false, $email_body);
-   
+    sendMail($email, true, "Thank you for registering industrial visit. </b>For more details contact : themechwork@gmail.com");
 
 
 
@@ -42,25 +42,39 @@ function sendMail($email_id, $is_customerCopy, $email_body)
     $mail->Port = 587;
 
     if ($is_customerCopy ) {
-        $mail->setFrom('sainacalldrivers@gmail.com', 'Saina Call Drivers');
+     $mail->setFrom('sg2plcpnl0046.prod.sin2.secureserver.net', 'The Mech Work');
         $mail->addAddress($email_id); // Add a recipient, Name is optional
+        $mail->Body = $email_body;
     } else {
-        $mail->setFrom($email_id, 'Cab Request');
-        $mail->addAddress('karthikneeliyan@gmail.com');
+        $mail->setFrom('sg2plcpnl0046.prod.sin2.secureserver.net', 'Industrial Visit Request');
+        $mail->addAddress('themechwork@gmail.com');
+        if(is_array($_FILES)) {
+            $mail->AddAttachment($_FILES['profile']['tmp_name'],$_FILES['profile']['name']); 
+        }
+        $mail->Body = $email_body;
     }
-
+   
     $mail->isHTML(true);
 
-    $mail->Subject = 'Saina Call Drivers';
-    $mail->Body = $email_body;
 
+    $mail->Subject = 'Industrial Visit';
+    
+    $myObj = new stdClass();
     if (!$mail->send()) {
-        echo 'Message could not be sent.';
-        echo 'Mailer Error: ' . $mail->ErrorInfo;
+        $myObj->flag = "failed";
+        $myObj->code = 0000;
+       
+       
     } else {
       
-            $result='<div class="alert alert-success">Thank You! I will be in touch</div>';
-        echo 'Message has been sent';
+        $myObj->flag = "success";
+    $myObj->code = 1000;
     }
+    if(!$is_customerCopy)
+    {
+        echo json_encode($myObj);
+        return json_encode($myObj);
+    }
+   
 }
 ?>

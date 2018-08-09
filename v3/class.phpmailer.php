@@ -560,7 +560,7 @@ class PHPMailer {
       case 'echo':
       default:
         //Just echoes exactly what was received
-        echo $str;
+      //  echo $str;
     }
   }
 
