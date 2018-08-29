@@ -203,10 +203,10 @@ h1, h2, h3, h4, h5, h6{
   ul.nav li.dropdown:hover ul.dropdown-menu{ display: block; }
   ul.nav li.dropdown:hover ul.dropdown-menu li.dropdown-submenu ul.dropdown-menu {
       display: none;
-  } 
+  }
   ul.nav li.dropdown ul.dropdown-menu li.dropdown-submenu:hover ul.dropdown-menu {
       display: block;
-  } 
+  }
   .lead {
     font-size: 21px;
   }
@@ -221,7 +221,7 @@ h1, h2, h3, h4, h5, h6{
 }
 .slider-img{
   width: 100%;
-  height: 80%; 
+  height: 80%;
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
@@ -230,7 +230,7 @@ h1, h2, h3, h4, h5, h6{
 }
 #header .single-item img{
   width: 100%;
-  height: 100vh;  
+  height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -364,7 +364,7 @@ h1, h2, h3, h4, h5, h6{
 -------------------------------------------------- */
 .bg-img-header{
   width: 100%;
-  height: 60%; 
+  height: 60%;
   margin: 5% auto;
   /* Center and scale the image nicely */
   background-position: center;
@@ -604,6 +604,7 @@ ul.ul-sub-list li{
   padding: 60px 0;
   background: url(../img/contactus-bg.png);
   background-size: cover;
+  width: 100%;
   /*background-attachment: fixed;*/
 }
 #contact-section .section-title h2 {
@@ -739,7 +740,7 @@ label {
   }
   .header-img-caption{
     font-size: 3vh;
-    padding: 10px; 
+    padding: 10px;
   }
   .slick-dots li button:before{
     font-size: 10px;
@@ -956,7 +957,7 @@ textarea{
   font-size: 40px;
   line-height: 56px;
   width: 56px;
-  height: 56px;  
+  height: 56px;
 }
 .card .card-content{
   padding: 10px 20px 30px;
@@ -1025,10 +1026,10 @@ textarea{
   height: 600px;
 }
 .objective-section{
-  background:url("../img/banners/banner3.jpg");  
+  background:url("../img/banners/banner3.jpg");
 }
 .purpose-section{
-  background:url("../img/banners/banner1.jpg");  
+  background:url("../img/banners/banner1.jpg");
 }
 
 .img-round img{
@@ -1043,4 +1044,70 @@ textarea{
 iframe{
   display: none;
 }
+#mySidenav a {
+  position: fixed;
+  left: -2%;
+  transition: 0.3s;
+  padding: 10px;
+  width: 6%;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  border-radius: 0 5px 5px 0;
 
+}
+#mySidenav i{
+  margin-left:70%;
+}
+
+#mySidenav a:hover {
+  left: 0;
+}
+
+#training {
+    top: 30%;
+    background-color: #919396;
+}
+
+#recruitment {
+    top: 37%;
+    background-color: #c6c6c6;
+}
+
+#odConsulting {
+    top: 44%;
+    background-color: #919396;
+}
+
+#npd {
+    top: 51%;
+    background-color: #c6c6c6;
+}
+#audit {
+    top: 58%;
+    background-color: #919396;
+}
+
+#tce {
+    top: 65%;
+    background-color: #c6c6c6;
+}
+
+
+@media(max-width: 480px){
+  .ndpimg img{
+    width: 200px;
+    height: 200px;
+  }
+  .pagecontent{
+    margin-left: 30px;
+  }
+  #mySidenav a{
+    width: 12%;
+    font-size: 15px;
+  }
+  #mySidenav i{
+    margin-left:20%;
+    font-size: 10px;
+  }
+}

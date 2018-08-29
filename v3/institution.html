@@ -23,69 +23,12 @@
   <link rel="stylesheet" href="slick/slick-theme.css">
   <!--  My Stylesheet -->
   <link rel="stylesheet" href="css/style2.css">
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous"> -->
 </head>
 
 <body>
   <!-- Navbar -->
-  <nav id="menu" class="navbar navbar-default navbar-fixed-top" role="navigation">
-    <div class="container">
-      <div class="navbar-header page-scroll">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false"
-          aria-controls="navbar">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-
-        <a class="navbar-brand page-scroll" href="#page-top">
-          <img src="img/logo.png">
-        </a>
-      </div>
-
-      <div id="navbar" class="navbar-collapse collapse">
-        <ul class="nav navbar-nav navbar-right">
-          <li>
-            <a href="index.html" class="page-scroll">Home</a>
-          </li>
-          <li>
-            <a href="index.html" class="page-scroll">About us</a>
-          </li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services
-              <span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-              <li>
-                <a href="industries.html" class="page-scroll">Industry</a>
-              </li>
-              <li>
-                <a href="institution.html" class="page-scroll">Institution</a>
-              </li>
-              <li>
-                <a href="individual.html" class="page-scroll">Individual</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="events.html" class="page-scroll">Events</a>
-          </li>
-          <li>
-            <a href="blogs.html" class="page-scroll">Blogs</a>
-          </li>
-          <li>
-            <a href="register_iv.html" class="page-scroll">Registration for IV</a>
-          </li>
-          <li>
-            <a href="#contact-section" class="page-scroll">Contact Us</a>
-          </li>
-          <li>
-            <a href="#" class="page-scroll">Login</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <div id="navbar"></div>
 
   <div class="bg-img-header institution-bg">
     <div class="header-img-caption caption-left">
@@ -98,13 +41,22 @@
   <div class="clearfix"></div>
 
 
+  <div id="mySidenav" class="sidenav">
+      <a href="#od-section" id="training" data-toggle="tooltip" data-placement="right" title="Institutions"><i class="fa fa-university"></i></a>
+      <a href="#content-container" id="recruitment" data-toggle="tooltip" data-placement="right" title="Functions"><i class="fa fa-hand-o-right"></i></a>
+      <a href="#benefits-section" id="odConsulting" data-toggle="tooltip" data-placement="right" title="Benefits"><i class="fa fa-check"></i></a>
+  </div>
+
+  <div class="pagecontent">
+
   <!-- institute Section -->
-  <div id="od-section">
+  <p id="od-section">.</p><br>
+  <div>
     <div class="container">
       <div class="row">
         <div class="col-xs-12">
           <div class="section-title wow fadeInDown text-center" data-wow-delay="200ms">
-            <h2>OD consulting</h2>
+            <h2>Institutions</h2>
             <hr>
           </div>
         </div>
@@ -132,10 +84,6 @@
                   gained to students.</li>
               </ul>
               </br>
-
-
-
-
             </div>
           </div>
         </div>
@@ -144,7 +92,8 @@
   </div>
 
   <!-- Content Section -->
-  <div id="content-container">
+  <p id="content-container">.</p><br>
+  <div>
     <div class="container">
 
       <div class="about-text wow fadeInDown" data-wow-delay="600ms">
@@ -181,7 +130,8 @@
     </div>
   </div>
 
-  <div id="benefits-section">
+<p id="benefits-section">.</p><br>
+  <div>
     <div class="container">
       <div class="row">
         <div class="col-xs-12">
@@ -196,160 +146,43 @@
           <div class="wow fadeInDown" data-wow-delay="600ms">
             <div class="card-container p-b-1">
               <h3>To Institute</h3>
-              <pre>
-                        1.Improved quality of faculty.
-                    	2.More relevant curriculum.
-                    	3.Better Placement of students.
-                    	4.Better utilization of expertise of industry
+              <ul>
+                <li class="icon-arrow">Improved quality of faculty.</li>
+                <li class="icon-arrow">More relevant curriculum.</li>
+                <li class="icon-arrow">Better Placement of students.</li>
+                <li class="icon-arrow">Better utilization of expertise of industry</li>
+              </ul>
 
-                </pre>
                 <h3>To Faculty</h3>
-              <pre>
-            1.It gives good understanding of the industry and
-              helps in building up  of useful case studies for 
-              improving the quality of future teaching.
-            2.It provides an ability to identify research program of industrial importance.
+                <ul>
+                  <li class="icon-arrow">It gives good understanding of the industry and helps in building up  of useful case studies for improving the quality of future teaching.</li>
+                  <li class="icon-arrow">It provides an ability to identify research program of industrial importance.</li>
+                </ul>
 
-
-            </pre>
             <h3>To Students </h3>
-              <pre>
-            1.Gaining real life experiences.
-            2.Application of theoretical knowledge.
-            3.Enhancement of oral and written skills.
-            4.Decision making on career choice.
-            5.Paid pre-employment (on-studies training).
-            6.Gaining access to sophisticated instrumentation.
-            7.Understanding the work culture of industries.
-
-
-        </pre>
-
+              <ul>
+                <li class="icon-arrow">Gaining real life experiences.</li>
+                <li class="icon-arrow">Application of theoretical knowledge.</li>
+                <li class="icon-arrow">Enhancement of oral and written skills.</li>
+                <li class="icon-arrow">Decision making on career choice.</li>
+                <li class="icon-arrow">Paid pre-employment (on-studies training).</li>
+                <li class="icon-arrow">Gaining access to sophisticated instrumentation.</li>
+                <li class="icon-arrow">Understanding the work culture of industries.</li>
+              </ul>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+
 
   <div class="clearfix m-b-80"></div>
 
-  <!-- Contact Section -->
-  <div id="contact-section">
-    <div class="container">
-      <div class="section-title wow fadeInDown" data-wow-delay="200ms">
-        <h2>Contact Us</h2>
-        <div class="clearfix"></div>
-      </div>
-      <div class="col-xs-12 col-sm-4 wow fadeInLeft" data-wow-delay="400ms">
-        <h3>Contact info</h3>
-        <div class="space"></div>
-        <p>
-          <i class="fa fa-map-marker fa-fw pull-left"></i>
-          The Mech Work
-          <br>
-        </p>
-        <p>
-          <i class="fa fa-address-card fa-fw pull-left"></i>
-          <b>Street
-            <br>
-          </b>
-          Lane,
-          <br>
-          <span class="m-r-25">Address,
-            <br>
-          </span>
-          <span class="m-r-25">Country
-            <br>
-          </span>
-        </p>
-        <div class="space"></div>
-        <p>
-          <i class="fa fa-envelope-o fa-fw pull-left"></i>info@themechwork.com</p>
+  <div id="common_contact"></div>
+  <div id="common_footer"></div>
 
-        <div class="space"></div>
-        <p>
-          <i class="fa fa-phone fa-fw pull-left"></i>+91-12345-12345</p>
-      </div>
-
-      <div class="col-xs-12 col-sm-8 wow fadeInRight" data-wow-delay="1000ms">
-        <form id="gform" method="POST" action="https://script.google.com/macros/s/AKfycbzXSf7yjp8hyEEZiR8Lz1w3pNpnIZNLI-Kz_H4J1016_5OM6z7r/exec">
-          <h3>Leave us a message</h3>
-          <div class="row">
-            <div class="col-xs-12 col-sm-4">
-              <div class="form-group">
-                <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required="required">
-                <p class="help-block text-danger"></p>
-              </div>
-            </div>
-            <div class="col-xs-12 col-sm-4">
-              <div class="form-group">
-                <input type="email" name="email" id="email" class="form-control" placeholder="Enter your email" required="required">
-                <p class="help-block text-danger"></p>
-              </div>
-            </div>
-            <div class="col-xs-12 col-sm-4">
-              <div class="form-group">
-                <input type="tel" name="number" id="number" class="form-control" placeholder="Enter your contact number" required="required">
-                <p class="help-block text-danger"></p>
-              </div>
-            </div>
-          </div>
-          <div class="form-group">
-            <textarea name="message" id="message" class="form-control" rows="4" placeholder="Enter your message" required></textarea>
-            <p class="help-block text-danger"></p>
-          </div>
-          <div id="success"></div>
-          <button type="submit" class="btn custom-btn-outline m-t-20">Send Message</button>
-        </form>
-        <div id="thankyou_message" style="display: none;">
-          <h3>
-            <em>Thanks</em> for contacting us! We will get back to you soon!</h3>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Footer -->
-  <div id="footer">
-    <div class="container-fluid">
-      <div class="row wow fadeInUp" data-wow-delay="200ms">
-        <div class="col-xs-6 col-sm-4">
-          <p>
-            <b>©</b> 2018 The Mech Work. All rights reserved.</p>
-        </div>
-        <div class="col-xs-6 col-sm-4 text-center">
-          <ul class="social-section">
-            <li class="facebook">
-              <a href="https://www.facebook.com" title="Facebook" target="_blank">
-                <i class="fa fa-facebook-square"></i>
-              </a>
-            </li>
-            <li class="linkedin">
-              <a href="https://www.linkedin.com" title="Linkedin" target="_blank">
-                <i class="fa fa-linkedin-square"></i>
-              </a>
-            </li>
-            <li class="Twitter">
-              <a href="https://www.twitter.com" title="Twitter" target="_blank">
-                <i class="fa fa-twitter-square"></i>
-              </a>
-            </li>
-            <li class="Youtube">
-              <a href="https://www.youtube.com" title="Youtube" target="_blank">
-                <i class="fa fa-youtube-square"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div class="col-xs-12 col-sm-4 text-right credits">
-          <a href="#">
-            <!-- <span>Crafted with <i class="fa fa-heart"></i> by Abhinav</span> -->
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
 
   <!-- Bootstrap core JavaScript
     ================================================== -->
@@ -367,6 +200,11 @@
   <script data-cfasync="false" src="js/form-submission-handler.min.js"></script>
   <!-- Our own Js Files -->
   <script src="js/index.js"></script>
+  <script type="text/javascript">
+  $(document).ready(function(){
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+  </script>
 </body>
 
 </html>
