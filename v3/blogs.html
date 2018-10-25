@@ -1,278 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- website Details for search engine's -->
-    <title>The Mech Work</title>
-    <meta name="description" content="JMECH-Details">
-    <meta name="keywords" content="JMECH descriptions">
-    <meta name="author" content="JMECH-email">
-    <!-- Brand Image -->
-    <!-- <link rel="icon" href="img/logo.png"> -->
-    <!-- Bootstrap and core CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css" >
-    <!-- Custom styles for this template -->
-    <link rel="stylesheet" href="css/animate.min.css">
-    <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="css/nivo-lightbox.min.css">
-    <link rel="stylesheet" href="css/nivo-theme.min.css">
-    <link rel="stylesheet" href="slick/slick.css">
-    <link rel="stylesheet" href="slick/slick-theme.css">
-    <!--  My Stylesheet -->
-    <link rel="stylesheet" href="css/style2.css">
-    <style>
-* {
-    box-sizing: border-box;
-}
 
-body {
-    background-color: #f1f1f1;
-    font-family: Arial;
-}
-
-/* Center website */
-.main {
-    max-width: 1000px;
-    margin: auto;
-}
-
-h1 {
-    font-size: 50px;
-    word-break: break-all;
-}
-
-.row {
-    margin: 8px -16px;
-}
-
-/* Add padding BETWEEN each column */
-.row,
-.row > .column {
-    padding: 8px;
-}
-
-/* Create four equal columns that floats next to each other */
-.column {
-    float: left;
-    width: 25%;
-}
-
-/* Clear floats after rows */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-/* Content */
-.content {
-    background-color: white;
-    padding: 10px;
-}
-
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 900px) {
-    .column {
-        width: 50%;
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- website Details for search engine's -->
+  <title>The Mech Work</title>
+  <meta name="description" content="JMECH-Details">
+  <meta name="keywords" content="JMECH descriptions">
+  <meta name="author" content="JMECH-email">
+  <!-- Brand Image -->
+  <!-- <link rel="icon" href="img/logo.png"> -->
+  <!-- Bootstrap and core CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- Custom styles for this template -->
+  <link rel="stylesheet" href="css/animate.min.css">
+  <link rel="stylesheet" href="fonts/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/nivo-lightbox.min.css">
+  <link rel="stylesheet" href="css/nivo-theme.min.css">
+  <link rel="stylesheet" href="slick/slick.css">
+  <link rel="stylesheet" href="slick/slick-theme.css">
+  <!--  My Stylesheet -->
+  <link rel="stylesheet" href="css/style2.css">
+  <style>
+    .blog-sidebar .widget {
+      overflow: hidden;
+      position: relative;
+      border-color: #eeeeee;
+      border-radius: 0;
+      box-shadow: none;
+      margin-bottom: 0;
+      background-color: #fff;
+      border: 1px solid #eeeeee;
     }
-}
 
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-    .column {
-        width: 100%;
+    .homeSmallImage {
+      width: 105px;
+      float: left;
+      height:100px;
+      margin: 0 10px 0 0;
     }
-}
-</style>
-  </head>
+  </style>
+</head>
 
-  <body>
-    <!-- Navbar -->
-    <nav id="menu" class="navbar navbar-default navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header page-scroll">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
+<body>
+  <!-- Navbar -->
+  <div id="navbar"></div>
+  <div class="container" style="margin-top:100px;">
+    <div class="row">
 
-          <a class="navbar-brand page-scroll" href="#page-top">
-            <img src="img/logo.png">
-          </a>
-        </div>
+      <div class="col-md-4 col-xs-12 col-sm-12 ">
+        <div class="blog-sidebar">
+          <div class="widget">
+            <div class="widget-heading">
+              <h4><a>Featured Articles</a></h4>
+            </div>
+            <ul>
+              <li class="clearfix"style="padding-top:12px">
+                <a href="industries.html" target="_blank">
+                  <img src="img/headerImg/industry.jpeg" class="homeSmallImage" alt="industries">
+                  Tips To Create An Effective Fresher Resume
+                </a>
+              </li>
 
-        <div id="navbar" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="index.html" class="page-scroll">Home</a></li>
-            <li><a href="index.html" class="page-scroll">About us</a></li>
-            <li class="dropdown">
-              <a href="service_home.html" class="dropdown-toggle"  data-hover="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services<span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
-                <li><a href="industries.html" class="page-scroll">Industry</a></li>
-                <li><a href="institution.html" class="page-scroll">Institution</a></li>
-                <li><a href="individual.html" class="page-scroll">Individual</a></li>
-              </ul>
-            </li>
-            <li><a href="events.html" class="page-scroll">Events</a></li>
-            <li  class="active"><a href="#" class="page-scroll">Blogs</a></li>
-            <li><a href="register_iv.html" class="page-scroll">Registration for IV</a></li>
-            <li><a href="#contact-section" class="page-scroll">Contact Us</a></li>
-            <li><a href="#" class="page-scroll">Login</a></li>
-          </ul>
+              <li class="clearfix" style="padding-top:12px">
+                <a href="institution.html" target="_blank">
+                  <img src="img/headerImg/institution.jpeg" class="homeSmallImage" alt="institutions">
+                  Tips To Create An Effective Fresher Resume
+                </a>
+              </li>
+
+              <li class="clearfix"style="padding-top:12px">
+                <a href="individual.html" target="_blank">
+                  <img src=img/headerImg/individuals.jpg class="homeSmallImage" alt="individuals">
+                  Tips To Create An Effective Fresher Resume
+                </a>
+              </li>
+            </ul>
+
+          </div>
         </div>
       </div>
-    </nav>
+    
+    <div class="col-md-8 col-xs-12 col-sm-12 ">
 
+      <div class="container-fluid">
+        <a href="#">
+          <h2>Tips To Create An Effective Fresher Resume</h2>
+        </a>
+        <p>Thursday, January 25, 2018 , Written by Aman</p>
+        Freshers are the individuals whose job requirements are probably the most sensitive and equally
+        consequential. And in that, resume has a big role to play...
+        </br>
 
+      </div>
 
-    <div class="main">
-
-<h1>MYLOGO.COM</h1>
-<hr>
-
-<h2>PORTFOLIO</h2>
-<p>Resize the browser window to see the responsive effect.</p>
-
-<!-- Portfolio Gallery Grid -->
-<div class="row">
-  <div class="column">
-    <div class="content">
-      <img src="img/article.jpg" alt="Mountains" style="width:100%">
-      <h3>My Work</h3>
-      <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p>
     </div>
   </div>
-  <div class="column">
-    <div class="content">
-    <img src="img/article.jpg" alt="Lights" style="width:100%">
-      <h3>My Work</h3>
-      <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p>
-    </div>
   </div>
-  <div class="column">
-    <div class="content">
-    <img src="img/article.jpg" alt="Nature" style="width:100%">
-      <h3>My Work</h3>
-      <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p>
-    </div>
   </div>
-  <div class="column">
-    <div class="content">
-    <img src="img/article.jpg" alt="Mountains" style="width:100%">
-      <h3>My Work</h3>
-      <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p>
-    </div>
+
+
+
+
+
+  <!-- END MAIN -->
   </div>
-<!-- END GRID -->
-</div>
-
-<div class="row">
-  <div class="column">
-    <div class="content">
-      <img src="img/article.jpg" alt="Mountains" style="width:100%">
-      <h3>My Work</h3>
-      <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p>
-    </div>
-  </div>
-  <div class="column">
-    <div class="content">
-    <img src="img/article.jpg" alt="Lights" style="width:100%">
-      <h3>My Work</h3>
-      <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p>
-    </div>
-  </div>
-  <div class="column">
-    <div class="content">
-    <img src="img/article.jpg" alt="Nature" style="width:100%">
-      <h3>My Work</h3>
-      <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p>
-    </div>
-  </div>
-  <div class="column">
-    <div class="content">
-    <img src="img/article.jpg" alt="Mountains" style="width:100%">
-      <h3>My Work</h3>
-      <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p>
-    </div>
-  </div>
-<!-- END GRID -->
-</div>
-
-<div class="row">
-  <div class="column">
-    <div class="content">
-      <img src="img/article.jpg" alt="Mountains" style="width:100%">
-      <h3>My Work</h3>
-      <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p>
-    </div>
-  </div>
-  <div class="column">
-    <div class="content">
-    <img src="img/article.jpg" alt="Lights" style="width:100%">
-      <h3>My Work</h3>
-      <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p>
-    </div>
-  </div>
-  <div class="column">
-    <div class="content">
-    <img src="img/article.jpg" alt="Nature" style="width:100%">
-      <h3>My Work</h3>
-      <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p>
-    </div>
-  </div>
-  <div class="column">
-    <div class="content">
-    <img src="img/article.jpg" alt="Mountains" style="width:100%">
-      <h3>My Work</h3>
-      <p>Lorem ipsum dolor sit amet, tempor prodesset eos no. Temporibus necessitatibus sea ei, at tantas oporteat nam. Lorem ipsum dolor sit amet, tempor prodesset eos no.</p>
-    </div>
-  </div>
-<!-- END GRID -->
-</div>
-
-<!-- END MAIN -->
-</div>
 
 
+  <div id="common_contact"></div>
+  <div id="common_footer"></div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div id="common_contact"></div>
-<div id="common_footer"></div>
-
-      <!-- Bootstrap core JavaScript
+  <!-- Bootstrap core JavaScript
       ================================================== -->
-      <!-- Placed at the end of the document so the pages load faster -->
-      <script src="js/jquery.min.js"></script>
-      <script src="js/waypoints.min.js"></script>
-      <script src="js/bootstrap.min.js"></script>
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="js/jquery.min.js"></script>
+  <script src="js/waypoints.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
 
-      <!-- 3rd Party JS's -->
-      <script src="js/wow.min.js"></script>
-      <!-- <script src="js/scrollspy.js"></script> -->
-      <script src="js/typed.min.js"></script>
-      <script src="js/nivo-lightbox.min.js"></script>
-      <script src="slick/slick.min.js"></script>
-      <script data-cfasync="false" src="js/form-submission-handler.min.js"></script>
-      <!-- Our own Js Files -->
-      <script src="js/index.js"></script>
-    </body>
-  </html>
+  <!-- 3rd Party JS's -->
+  <script src="js/wow.min.js"></script>
+  <!-- <script src="js/scrollspy.js"></script> -->
+  <script src="js/typed.min.js"></script>
+  <script src="js/nivo-lightbox.min.js"></script>
+  <script src="slick/slick.min.js"></script>
+  <script data-cfasync="false" src="js/form-submission-handler.min.js"></script>
+  <!-- Our own Js Files -->
+  <script src="js/index.js"></script>
+</body>
+
+</html>
