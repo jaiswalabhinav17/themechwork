@@ -1,5 +1,4 @@
 <?php
-require_once 'PHPMailerAutoload.php';
 error_reporting(E_ERROR | E_PARSE);
      // define variables and set to empty values
      $name = $email = $phone = $profile = $website = "";

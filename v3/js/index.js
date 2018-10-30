@@ -10,6 +10,12 @@ $(document).ready(function(){
 
   var headerTitle = (windowHeight-50)/2;
   var headerTitleM = (windowHeight)/2;
+  $( window ).resize(function() {
+    var height=$('.navbar-fixed-top').height();
+    $('.margin-top').css('margin-top',height);
+       
+  });
+
   
   // Margin-top for Mobile and web
   var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
