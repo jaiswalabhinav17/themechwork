@@ -1111,3 +1111,16 @@ iframe{
     font-size: 10px;
   }
 }
+
+.blinking{
+  animation:blinkingText 3.8s infinite;
+}
+@keyframes blinkingText{
+  0%{     color: rgb(79, 122, 214);    }
+  29%{    color: rgb(108, 182, 224); }
+  39%{    color: rgb(100, 41, 194); }
+  49%{    color:rgb(14, 55, 78);  }
+  60%{   color: rgb(108, 182, 224);    }
+  80%{   color: #000;    }
+  100%{   color: #000;    }
+}

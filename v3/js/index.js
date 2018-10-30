@@ -13,7 +13,8 @@ $(document).ready(function(){
   $( window ).resize(function() {
     var height=$('.navbar-fixed-top').height();
     $('.margin-top').css('margin-top',height);
-       
+    $('.image-resp').css('height',height * 0.6);
+   
   });
 
   

@@ -2,36 +2,41 @@
 session_start();
 include('db.php');
 error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_STRICT);
-$message="";
-if($_SERVER["REQUEST_METHOD"] == "POST") {
+$message = "";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
   $stmt = $mysqli->prepare("INSERT INTO user_details (name,email_id,contact_no,password,catagory,user_details,created_date)
   VALUES (?,?,?,?,?,?,?)");
-$stmt->bind_param("sssssss",$username,$email_id,$phone,$password,$category,$details,$createdDate);
+  $stmt->bind_param("sssssss", $username, $email_id, $phone, $password, $category, $details, $createdDate);
 
-$category=$_POST["catagory"];
-$details=$_POST["user_details"];
-    $username= $_POST["name"];
-    $email_id= $_POST["email"];
-    $phone= $_POST["phone"];
-    $password= $_POST["password"];
-    $createdDate=date("Y-m-d");
+  $category = $_POST["catagory"];
+  $details = $_POST["user_details"];
+  $username = $_POST["name"];
+  $email_id = $_POST["email"];
+  $phone = $_POST["phone"];
+  $password = $_POST["password"];
+  $re_password = $_POST["repeat_password"];
+  if ($password !== $re_password) {
+    $passwordError = "Both passwords do not match";
+  } else {
+    $password = md5($password);
+    $createdDate = date("Y-m-d H:m:s");
     $myObj = new stdClass();
-    if($stmt->execute())
-    {
-        $myObj->flag = "success";
-        $myObj->code = 1000;
-        
-    }
-    else {
-        $myObj->flag = "failed";
-        $myObj->code = 0000;
+    if ($stmt->execute()) {
+      $myObj->flag = "success";
+      $myObj->code = 1000;
+      header("location:login.php");
+    } else {
+      $myObj->flag = "failed";
+      $myObj->code = 0000;
     }
     echo json_encode($myObj);
     return json_encode($myObj);
     $stmt->close();
     $mysqli->close();
+  }
+ 
 }
 ?>
 
@@ -79,10 +84,10 @@ $details=$_POST["user_details"];
                       <div class="wow fadeIn" data-wow-delay="600ms">
                         <div class="card-container login-container">
                           
-                          <h2 class="text-center">LOGIN</h2>
+                          <h2 class="text-center">SIGN UP</h2>
                           
                           <br>
-                          <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>"   method="post" >
+                          <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>"   method="post" autocomplete="off">
                             <div class="form-group">
                               <label for="collegeName" >Name</label>
                                 <input type="text" class="form-control input-sm" name="name" id="reg_iv_Name" placeholder="Enter the  name.."
@@ -96,14 +101,13 @@ $details=$_POST["user_details"];
                             </div>
                             <div class="form-group">
                               <label for="emailID" >Email</label>
-                                <input type="email" name="email" class="form-control input-sm" id="reg_iv_emailID" placeholder="Enter the  email address.."
+                                <input type="email" name="email" class="form-control input-sm" id=" emailID" placeholder="Enter the  email address.."
                                   required>
                             </div>
                             <div class="form-group">
-                  <label for="sel1">Category</label>
-                  <select placeholder="select car type" class="form-control input-sm" id="catagory" >
-                      <option value=1>Please select your category</option>
-                    <option>Industriy</option>
+                  <label for="sel1">Please select your category</label>
+                  <select placeholder="select car type" class="form-control input-sm" name="catagory" id="catagory" required>
+                    <option>Industry</option>
                     <option>Institution</option>
                     <option>Individual</option>
                   </select>
@@ -115,13 +119,14 @@ $details=$_POST["user_details"];
                             </div>
                             <div class="form-group">
                               <label for="password" >Password</label>
-                                <input type="password" name="password" class="form-control input-sm" id="password" placeholder="Enter the  Password.."
+                                <input type="password" name="password" class=" form-control input-sm" id="password" placeholder="Enter the  Password.."
                                   required>
                               </div>
                             <div class="form-group">
                               <label for="repeat_password" >Repeat Password</label>
-                                <text type="password" name="repeat_password" class="form-control input-sm" id="repeat_password" placeholder="Confirm Password.."
+                                <input type="password" name="repeat_password" class="passwordValidation form-control input-sm" id="repeat_password" placeholder="Confirm Password.."
                                   required>
+                                  <center> <span style="display:none;color:red" class="error-password">Both passwords are not same</span></center>
                               </div>
         
                             <br />
@@ -166,7 +171,7 @@ $details=$_POST["user_details"];
               <span class="m-r-25">Country<br></span>
             </p>
             <div class="space"></div>
-            <p><i class="fa fa-envelope-o fa-fw pull-left"></i>info@themechwork.com</p>
+            <p><i class="fa fa-envelope-o fa-fw pull-left"></i>network@themechwork.com</p>
 
             <div class="space"></div>
             <p><i class="fa fa-phone fa-fw pull-left"></i>+91-12345-12345</p>
@@ -272,6 +277,7 @@ $details=$_POST["user_details"];
   <!-- Our own Js Files -->
   <script src="js/index.js"></script>
   <script src="js/register_iv.js"></script>
+  <script src="js/signup.js"></script>
 </body>
 
 </html>

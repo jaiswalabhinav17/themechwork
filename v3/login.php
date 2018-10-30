@@ -10,7 +10,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $username= $_POST["user_name"];
     $password= $_POST["password"];
     $password=md5($password);
-    $stmt = $mysqli->prepare( "SELECT * from user_details  WHERE name=? and password=?");
+    $stmt = $mysqli->prepare( "SELECT * from user_details  WHERE email_id=? and password=?");
     $stmt->bind_param("ss", $username,$password);
     $stmt->execute();
     $result = $stmt->fetch();
@@ -19,7 +19,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["user_id"] = $username;
         header("location:index.html");
 	} else {
-	$message = "Invalid Username or Password!";
+  $credentialErr = "Invalid Username or Password!";
 	}
 }
 ?>
@@ -47,7 +47,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     <!--  My Stylesheet -->
     <link rel="stylesheet" href="css/style2.css">
   </head>
-  
+  <style>
+.error {color: #FF0000;}
+</style>
   <body class="login-bg">
 
     <!-- About us -->
@@ -60,15 +62,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
               <div class="card-container login-container">
                 
                 <h2 class="text-center">LOGIN</h2>
-                
                 <br>
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                   <div class="form-group">
-                    <label for="username"><b>Username</b></label>
-                    <input type="text" class="form-control" name="user_name" id="username" placeholder="Username" required>
+                    <label for="username"><b>Email Id</b></label>
+                    <input type="text" class="form-control" name="user_name" id="username" placeholder="Email Id" required>
                     <div class="clearfix"></div>
                     <div class="text-danger errorDivUsername" role="alert">
-                      Please enter username.
+                      Please enter Email Id.
                     </div>
                   </div>
                   <div class="form-group">
@@ -79,11 +80,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                     <div class="text-right text-primary forgot-password">
                       <small>Forgot Password?</small>
+                      </br>
+               <center> <span class="error"> <?php echo $credentialErr;?></span></center>
+
                     </div>
                   </div>
                   <br/>
                   <button type="submit"  name="login" class="btn btn-default btn-lg btn-block custom-btn">LOGIN</button>
                 </form>
+                <small>Don't have a account? <a href="signup.php">SignUp</a></small>
               </div>
             </div>
           </div>
