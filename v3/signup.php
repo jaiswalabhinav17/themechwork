@@ -96,8 +96,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
                             <div class="form-group">
                               <label for="contact" >Contact Number</label>
-                                <input type="text" name="phone" class="form-control input-sm" id="reg_iv_contact" placeholder="Enter the  contact number.."
+                                <input type="text" name="phone" maxlength="10"class="phonenum form-control input-sm" id="numberphone" placeholder="Enter the  contact number.."
                                   required>
+                                  <span class="error-num" style="display:none">Please enter valid mobile number</span>
                             </div>
                             <div class="form-group">
                               <label for="emailID" >Email</label>
@@ -174,7 +175,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p><i class="fa fa-envelope-o fa-fw pull-left"></i>network@themechwork.com</p>
 
             <div class="space"></div>
-            <p><i class="fa fa-phone fa-fw pull-left"></i>+91-12345-12345</p>
           </div>
 
           <div class="col-xs-12 col-sm-8 wow fadeInRight" data-wow-delay="1000ms">
@@ -197,9 +197,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <div class="col-xs-12 col-sm-4">
                   <div class="form-group">
-                    <input type="tel" name="number" id="number" class="form-control" placeholder="Enter your contact number"
+                    <input type="tel" name="number" id="number"  class=" form-control" placeholder="Enter your contact number"
                       required="required">
-                    <p class="help-block text-danger"></p>
+                    <p class="help-block text-danger error-num"></p>
                   </div>
                 </div>
               </div>
