@@ -8,7 +8,10 @@ if(pass!==rep_pass)
     $('.error-password').show();
 }
 });
-
+$('.phperrrors').keyup(function()
+{
+    $('.enteringvalues').text('');
+})
 $('.phonenum').on('blur keyup',function()
 {
 let num=$('#numberphone').val();

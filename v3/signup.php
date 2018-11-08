@@ -3,23 +3,22 @@ session_start();
 include('db.php');
 error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED ^ E_STRICT);
 $message = "";
+$dup_entry = "";
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-
-  $stmt = $mysqli->prepare("INSERT INTO user_details (name,email_id,contact_no,password,catagory,user_details,created_date)
-  VALUES (?,?,?,?,?,?,?)");
-  $stmt->bind_param("sssssss", $username, $email_id, $phone, $password, $category, $details, $createdDate);
-
-  $category = $_POST["catagory"];
-  $details = $_POST["user_details"];
-  $username = $_POST["name"];
-  $email_id = $_POST["email"];
-  $phone = $_POST["phone"];
   $password = $_POST["password"];
   $re_password = $_POST["repeat_password"];
   if ($password !== $re_password) {
     $passwordError = "Both passwords do not match";
+    echo $passwordError;
   } else {
+    $stmt = $mysqli->prepare("INSERT INTO user_details (name,email_id,contact_no,password,catagory,user_details,created_date)
+  VALUES (?,?,?,?,?,?,?)");
+    $stmt->bind_param("sssssss", $username, $email_id, $phone, $password, $category, $details, $createdDate);
+    $category = $_POST["catagory"];
+    $details = $_POST["user_details"];
+    $username = $_POST["name"];
+    $email_id = $_POST["email"];
+    $phone = $_POST["phone"];
     $password = md5($password);
     $createdDate = date("Y-m-d H:m:s");
     $myObj = new stdClass();
@@ -30,14 +29,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
       $myObj->flag = "failed";
       $myObj->code = 0000;
+      if ($stmt->errno === 1062) {
+        $dup_entry = 'Email id already exists.';
+        echo $dup_entry;
+      }
     }
-    echo json_encode($myObj);
-    return json_encode($myObj);
     $stmt->close();
     $mysqli->close();
   }
- 
 }
+
+
 ?>
 
 
@@ -98,12 +100,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                               <label for="contact" >Contact Number</label>
                                 <input type="text" name="phone" maxlength="10"class="phonenum form-control input-sm" id="numberphone" placeholder="Enter the  contact number.."
                                   required>
-                                  <span class="error-num" style="display:none">Please enter valid mobile number</span>
+                                  <span class="error-num" style="color:red;display:none">Please enter valid mobile number</span>
                             </div>
                             <div class="form-group">
                               <label for="emailID" >Email</label>
-                                <input type="email" name="email" class="form-control input-sm" id=" emailID" placeholder="Enter the  email address.."
+                                <input type="email" name="email" class="phperrrors form-control input-sm" id=" emailID" placeholder="Enter the  email address.."
                                   required>
+               <center> <span style="color:red" class="enteringvalues"> <?php echo $dup_entry; ?></span></center>
+
                             </div>
                             <div class="form-group">
                   <label for="sel1">Please select your category</label>
@@ -120,14 +124,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             </div>
                             <div class="form-group">
                               <label for="password" >Password</label>
-                                <input type="password" name="password" class=" form-control input-sm" id="password" placeholder="Enter the  Password.."
+                                <input type="password" name="password" class=" form-control input-sm phperrrors" id="password" placeholder="Enter the  Password.."
                                   required>
                               </div>
                             <div class="form-group">
                               <label for="repeat_password" >Repeat Password</label>
-                                <input type="password" name="repeat_password" class="passwordValidation form-control input-sm" id="repeat_password" placeholder="Confirm Password.."
+                                <input type="password" name="phperrrors repeat_password" class="passwordValidation form-control input-sm" id="repeat_password" placeholder="Confirm Password.."
                                   required>
                                   <center> <span style="display:none;color:red" class="error-password">Both passwords are not same</span></center>
+               <center> <span style="color:red" class="enteringvalues"> <?php echo $passwordError; ?></span></center>
+
                               </div>
         
                             <br />

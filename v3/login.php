@@ -10,14 +10,19 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $username= $_POST["user_name"];
     $password= $_POST["password"];
     $password=md5($password);
-    $stmt = $mysqli->prepare( "SELECT * from user_details  WHERE email_id=? and password=?");
+    $stmt = $mysqli->prepare( "SELECT name from user_details  WHERE email_id=? and password=?");
     $stmt->bind_param("ss", $username,$password);
     $stmt->execute();
-    $result = $stmt->fetch();
-                                                    
-    if($result) {
-        $_SESSION["user_id"] = $username;
+    $results = $stmt->get_result();
+    while($row = $results->fetch_assoc()) {
+      $name = $row['name'];
+    }
+                                             
+    if($results->num_rows !== 0) {
+        $_SESSION["user_id"] = $name;
+        setcookie("username", $name, time()+3600);
         header("location:index.html");
+        echo 'Welcome '.$name;
 	} else {
   $credentialErr = "Invalid Username or Password!";
 	}
@@ -49,6 +54,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
   </head>
   <style>
 .error {color: #FF0000;}
+.signup {
+    color: #262626;
+    font-size: 14px;
+    margin: 15px;
+    text-align: center;
+}
 </style>
   <body class="login-bg">
 
@@ -86,9 +97,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                   </div>
                   <br/>
-                  <button type="submit"  name="login" class="btn btn-default btn-lg btn-block custom-btn">LOGIN</button>
+                  <button type="submit" id="loginbtn" name="login" class="btn btn-default btn-lg btn-block custom-btn">LOGIN</button>
                 </form>
-                <small>Don't have a account? <a href="signup.php">SignUp</a></small>
+                <p class="signup">Don't have an account? <a style="color:blue;text-decoration:underline; " href="signup.php">SignUp</a></p>
               </div>
             </div>
           </div>

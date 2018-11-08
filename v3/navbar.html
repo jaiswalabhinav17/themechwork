@@ -7,13 +7,9 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-
-        <a class="navbar-brand page-scroll pull-left" href="#page-top">
-          <div class="row image-resp" >
-          <img src="img/logo_final.png"  width="85">
-           <span style="font-size: 24px">Innovate Initiate Incubate</span>
-          </div>
-        </a>
+        <object data="img/logo.svg" type="image/svg+xml" style="width:185px;margin-top: 7px;">
+          <img src="img/logo.svg" />
+        </object>
       </div>
 
       <div id="navbarcontent" class="navbar-collapse collapse">
@@ -32,8 +28,29 @@
           <li><a href="blogs.html" class="page-scroll">Blogs</a></li>
           <li><a href="register_iv.html" class="page-scroll blinking">Registration for IV</a></li>
           <li><a href="#contact-section" class="page-scroll">Contact Us</a></li>
-          <li><a href="login.php" class="page-scroll">Login</a></li>
+          <li><a href="login.php" class="page-scroll"><span id="loginnav">Login</span></a></li>
         </ul>
       </div>
     </div>
   </nav>
+<script>
+  if(""!==getcookie()&&undefined!==getcookie())
+{
+  $('#loginnav').text("");
+  $('#loginnav').text("Welcome "+getcookie());
+};
+
+function getcookie() {
+  var name = 'username' + "=";
+  var ca = document.cookie.split(';');
+  for(var i = 0; i < ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+          c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+          return c.substring(name.length, c.length);
+      }
+  }
+}
+</script>

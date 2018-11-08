@@ -3,6 +3,8 @@ $(document).ready(function(){
   $("#navbar").load("navbar.html"); 
   $("#common_contact").load("contact.html"); 
   $("#common_footer").load("footer.html"); 
+
+  
   var windowHeight = $(window).innerHeight();
   // $("#home").height(windowHeight);
   $(".single-item").height(windowHeight);
@@ -130,3 +132,5 @@ wow = new WOW({
   }
 }); 
 wow.init();
+
+
